@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="openlibrary" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bJq-Dp-0Ik">
+                                <rect key="frame" x="222" y="58" width="149" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="search"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="eNe-MP-bFg"/>
+                                </connections>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NK7-GS-lYv">
+                                <rect key="frame" x="20" y="118" width="560" height="462"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="07b-zD-OFM">
+                                <rect key="frame" x="379" y="54" width="36" height="30"/>
+                                <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="ClearAcction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t1s-tX-C9n"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ISBN:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2y-fU-l0N">
+                                <rect key="frame" x="176" y="58" width="43" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NK7-GS-lYv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="2ql-Vs-NbH"/>
+                            <constraint firstItem="bJq-Dp-0Ik" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-3.5" id="4Kt-zI-BOR"/>
+                            <constraint firstItem="NK7-GS-lYv" firstAttribute="top" secondItem="07b-zD-OFM" secondAttribute="bottom" constant="34" id="6Id-IY-8gp"/>
+                            <constraint firstItem="07b-zD-OFM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="97" id="91O-6g-zng"/>
+                            <constraint firstItem="07b-zD-OFM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="34" id="CgX-am-GCb"/>
+                            <constraint firstItem="NK7-GS-lYv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="H11-89-CYq"/>
+                            <constraint firstItem="d2y-fU-l0N" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-102.5" id="Ik1-dw-MA0"/>
+                            <constraint firstItem="d2y-fU-l0N" firstAttribute="baseline" secondItem="07b-zD-OFM" secondAttribute="baseline" id="SD4-Bd-G2C"/>
+                            <constraint firstAttribute="bottom" secondItem="NK7-GS-lYv" secondAttribute="bottom" constant="20" symbolic="YES" id="eeg-Az-cLs"/>
+                            <constraint firstItem="d2y-fU-l0N" firstAttribute="top" secondItem="bJq-Dp-0Ik" secondAttribute="top" id="fC8-wQ-8oa"/>
+                            <constraint firstItem="bJq-Dp-0Ik" firstAttribute="leading" secondItem="d2y-fU-l0N" secondAttribute="trailing" constant="3" id="ian-1z-YJQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ResultViewText" destination="NK7-GS-lYv" id="kHj-mn-Rfk"/>
+                        <outlet property="SearchText" destination="bJq-Dp-0Ik" id="wqp-ba-DoB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="641" y="339"/>
+        </scene>
+    </scenes>
+</document>
