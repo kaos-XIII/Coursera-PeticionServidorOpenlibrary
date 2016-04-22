@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -18,48 +20,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bJq-Dp-0Ik">
-                                <rect key="frame" x="222" y="58" width="149" height="21"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="978-84-376-0494-" borderStyle="bezel" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="bJq-Dp-0Ik">
+                                <rect key="frame" x="189" y="79" width="179" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="179" id="IwM-wf-b97"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="search"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="eNe-MP-bFg"/>
                                 </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NK7-GS-lYv">
-                                <rect key="frame" x="20" y="118" width="560" height="462"/>
+                                <rect key="frame" x="20" y="111" width="560" height="469"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ISBN:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2y-fU-l0N">
+                                <rect key="frame" x="257" y="49" width="43" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="07b-zD-OFM">
-                                <rect key="frame" x="379" y="54" width="36" height="30"/>
+                                <rect key="frame" x="376" y="76" width="36" height="30"/>
                                 <state key="normal" title="Clear"/>
                                 <connections>
                                     <action selector="ClearAcction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t1s-tX-C9n"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ISBN:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2y-fU-l0N">
-                                <rect key="frame" x="176" y="58" width="43" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="NK7-GS-lYv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="2ql-Vs-NbH"/>
-                            <constraint firstItem="bJq-Dp-0Ik" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-3.5" id="4Kt-zI-BOR"/>
-                            <constraint firstItem="NK7-GS-lYv" firstAttribute="top" secondItem="07b-zD-OFM" secondAttribute="bottom" constant="34" id="6Id-IY-8gp"/>
-                            <constraint firstItem="07b-zD-OFM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="97" id="91O-6g-zng"/>
-                            <constraint firstItem="07b-zD-OFM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="34" id="CgX-am-GCb"/>
-                            <constraint firstItem="NK7-GS-lYv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="H11-89-CYq"/>
-                            <constraint firstItem="d2y-fU-l0N" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-102.5" id="Ik1-dw-MA0"/>
-                            <constraint firstItem="d2y-fU-l0N" firstAttribute="baseline" secondItem="07b-zD-OFM" secondAttribute="baseline" id="SD4-Bd-G2C"/>
-                            <constraint firstAttribute="bottom" secondItem="NK7-GS-lYv" secondAttribute="bottom" constant="20" symbolic="YES" id="eeg-Az-cLs"/>
-                            <constraint firstItem="d2y-fU-l0N" firstAttribute="top" secondItem="bJq-Dp-0Ik" secondAttribute="top" id="fC8-wQ-8oa"/>
-                            <constraint firstItem="bJq-Dp-0Ik" firstAttribute="leading" secondItem="d2y-fU-l0N" secondAttribute="trailing" constant="3" id="ian-1z-YJQ"/>
+                            <constraint firstItem="bJq-Dp-0Ik" firstAttribute="top" secondItem="d2y-fU-l0N" secondAttribute="bottom" constant="9" id="0Dt-Os-EkT"/>
+                            <constraint firstItem="d2y-fU-l0N" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="29" id="3Dc-Xl-ih0"/>
+                            <constraint firstItem="NK7-GS-lYv" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="9ow-QN-Q4M"/>
+                            <constraint firstAttribute="bottom" secondItem="NK7-GS-lYv" secondAttribute="bottom" constant="20" symbolic="YES" id="DR6-HO-fh8"/>
+                            <constraint firstItem="bJq-Dp-0Ik" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-21.5" id="EOu-0E-H95"/>
+                            <constraint firstItem="bJq-Dp-0Ik" firstAttribute="baseline" secondItem="07b-zD-OFM" secondAttribute="baseline" id="Hcu-SM-4oa"/>
+                            <constraint firstItem="d2y-fU-l0N" firstAttribute="centerX" secondItem="bJq-Dp-0Ik" secondAttribute="centerX" id="PD6-fZ-oNa"/>
+                            <constraint firstItem="07b-zD-OFM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="94" id="SbS-Np-xOB"/>
+                            <constraint firstItem="bJq-Dp-0Ik" firstAttribute="centerY" secondItem="07b-zD-OFM" secondAttribute="centerY" id="bny-Gj-hkV"/>
+                            <constraint firstItem="NK7-GS-lYv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="kQz-gl-Vg1"/>
+                            <constraint firstItem="07b-zD-OFM" firstAttribute="leading" secondItem="bJq-Dp-0Ik" secondAttribute="trailing" constant="8" symbolic="YES" id="mjL-mv-hym"/>
+                            <constraint firstItem="d2y-fU-l0N" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-21.5" id="o9F-2F-iGF"/>
+                            <constraint firstItem="bJq-Dp-0Ik" firstAttribute="baseline" secondItem="07b-zD-OFM" secondAttribute="firstBaseline" id="tbz-JW-1NH"/>
+                            <constraint firstItem="NK7-GS-lYv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yPv-P7-scC"/>
+                            <constraint firstItem="NK7-GS-lYv" firstAttribute="top" secondItem="07b-zD-OFM" secondAttribute="bottom" constant="5" id="zLz-4e-aQH"/>
                         </constraints>
                     </view>
                     <connections>
@@ -69,7 +78,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="641" y="339"/>
+            <point key="canvasLocation" x="483" y="495"/>
         </scene>
     </scenes>
 </document>
